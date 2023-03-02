@@ -35,7 +35,7 @@ jobs:
       with:
         python-version: '3.9'
     - name: Test
-      run: python -m --verbose --failfast unittest test.py
+      run: python -m unittest --verbose --failfast test.py
 
   build:
     name: Build and Store Artifact
