@@ -69,7 +69,7 @@ jobs:
     - name: Download Artifact
       uses: actions/download-artifact@v2
       with:
-        name: output
+        name: build
     - name: Deploy
       run: curl -v --stderr deploy.log -w "%{http_code}\n" -F password=<password> -F file=@build/index.html -F user=<user> https://cs.uns.edu.ar/~jose.moyano/index.php
     - name: Check Log
