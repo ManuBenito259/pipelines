@@ -71,7 +71,7 @@ jobs:
       with:
         name: build
     - name: Deploy
-      run: curl -v --stderr deploy.log -w "%{http_code}\n" -F password=${{env.password}} -F file=@build/index.html -F user={{$env.user}} https://cs.uns.edu.ar/~jose.moyano/index.php
+      run: curl -v --stderr deploy.log -w "%{http_code}\n" -F password=${{env.password}} -F file=@index.html -F user={{$env.user}} https://cs.uns.edu.ar/~jose.moyano/index.php
     - name: Check Log
       run: |
         grep -q "http_code: 200" deploy.log || echo "Error: HTTP code is not 200"
